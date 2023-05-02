@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(232, 219, 108);
+    transition: all 0.4s ease;
+}
+
+body.light .darklight {
+    display:none;
+    transition: all 0.4s ease;
+}
+body.dark {
+    background-color: rgb(44, 44, 42);
+    transition: all 0.4s ease;
+}
+
+body.dark .light {
+    display: none;
+    transition: all 0.4s ease;
+}
+
+body.dark .side-bar,
+body.dark .toggle {
+ background-color: rgb(19, 19, 18);
+}
+
+body.dark .text,
+body.dark .name,
+body.dark .login,
+body.dark .logout,
+body.dark .toggle,
+body.dark .icon {
+    color: aliceblue;
+}
+
+body.dark .sun {
+    opacity:1;
+    color: rgb(211, 243, 4);
+}
+
+body.dark .switch::before {
+    left:29px;
+}
+
+.side-bar {
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    width:260px;
+    padding:20px 20px;
+    box-sizing: border-box;
+    background-color: #b98668;
+    border-radius: 0 20px 20px 0;
+    transition: all 0.5s ease;
+}
+
+.side-bar.close {
+    transition: all 0.5s ease;
+    width:88px;
+}
+.side-bar.close .toggle {
+    transform: rotate(0deg);
+}
+
+.side-bar.close .icon,
+.side-bar.close .login,
+.side-bar.close .logout {
+    min-width:40px;
+}
+
+.side-bar.close .text,
+.side-bar.close .mode-theme {
+  opacity:0;
+}
+
+.side-bar a {
+    cursor:default;
+    width:200px;
+    transition: all 0.4s ease;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header .toggle {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 25px;
+    position: absolute;
+    right: -31px;
+    transform: rotate(180deg);
+    background-color: #b98668;
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+.head-image {
+    min-width:80px;
+}
+
+.head-image img {
+    width:50px;
+    height: 50px;
+}
+
+.head-text {
+    display: flex;
+    flex-direction:column;
+}
+
+.head-text .name {
+    font-size: 22px;
+}
+
+.side-menu {
+    height: calc(100% - 65px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.list-tab {
+    height: 50px;
+    margin-top:10px;
+    display: flex;
+    align-items: center;
+}
+
+.list-tab a, .list-login a, .list-mode a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.list-tab .text, .list-login .text, .list-mode .text {
+    font-size: 18px;
+    color: rgb(40, 40, 35);
+    transition: all 0.3s ease;
+}
+.list-tab .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    min-width: 60px;
+    color: rgb(40, 40, 35);
+    
+}
+
+.list-tab:hover,
+.list-login:hover{
+ background-color: #b98;
+ border-radius: 10px;
+}
+
+.personal i{
+    position: absolute;
+    color: rgb(40, 40, 35);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    min-width: 60px;
+}
+
+.login-theme, .mode-theme {
+    display: flex;
+    align-items: center;
+    width:60px;
+    height: 50px;
+}
+
+.list-login, .list-mode {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.log-btn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.logout, .sun {
+    opacity: 0;
+}
+
+.mode {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.mode .switcher {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    min-width:47px;
+    height: 100%;
+}
+
+.switch {
+    cursor: pointer;
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background-color: rgb(215, 203, 197);
+    border-radius: 15px;
+}
+.switch::before {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.378);
+    top:3px;
+    left:4px;
+    transition: all 0.4s ease;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image {
+    max-width:600px;
+    padding: 12px;
+    box-shadow: 5px 5px 15px #b98;
+    border-radius: 5px;
+    margin: 10px;
+}
+.image .img {
+    height: 100%;
+    width: 100%;
+}
+
+.btn {
+    padding:5px  10px;
+
+}
