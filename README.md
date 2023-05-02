@@ -13,8 +13,8 @@
 
 ### Backend:
 [![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
-[![Nginx](https://img.shields.io/badge/NGINX-008000?style=for-the-badge&logo=NGINX)](https://nginx.org/ru/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Nginx](https://img.shields.io/badge/NGINX-008000?style=for-the-badge&logo=NGINX)](https://nginx.org/ru/)
 
 ### Infrastructure and Automation:
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/)
