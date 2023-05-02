@@ -1,7 +1,9 @@
 package main
 
 import (
+	"math/rand"
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -17,13 +19,13 @@ type corgi struct {
 	Breed string `json:"breed"`
 	Color string `json:"color"`
 	Age   int    `json:"age"`
-	// Photo
+	Photo string `json:"photo"`
 }
 
-// albums slice to seed record album data.
+// corgis slice to seed record cori data.
 var corgis = []corgi{
-	{ID: "1", Name: "Pembroke", Breed: "Pembroke Welsh Corgi", Color: "bicolor", Age: 1},
-	{ID: "2", Name: "Cardigan", Breed: "Cardigan Welsh Corgi", Color: "tricolor", Age: 1},
+	{ID: "0", Name: "Pembroke", Breed: "Pembroke Welsh Corgi", Color: "bicolor", Age: 1, Photo: ""},
+	{ID: "1", Name: "Cardigan", Breed: "Cardigan Welsh Corgi", Color: "tricolor", Age: 1, Photo: ""},
 }
 
 func main() {
@@ -39,7 +41,7 @@ func main() {
 
 	router.GET("/corgis", getCorgis)
 	router.GET("/corgis/:id", getCorgiByID)
-	// router.GET("/corgis/random", getCorgiRandom)
+	router.GET("/corgis/random", getCorgiRandom)
 	router.POST("/corgis", postCorgis)
 
 	s := &http.Server{
@@ -79,7 +81,7 @@ func getCorgiByID(c *gin.Context) {
 
 	// Loop through the list of corgis, looking for
 	// an corgi whose ID value matches the parameter.
-	// Rewrite in binary search
+	// ! Rewrite in binary search
 	for _, a := range corgis {
 		if a.ID == id {
 			c.IndentedJSON(http.StatusOK, a)
@@ -89,6 +91,17 @@ func getCorgiByID(c *gin.Context) {
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "corgi with this ID not found"})
 }
 
-//func getCorgiRandom() {
+// Generates random ID in range len(corgis)
+// and returns a .json with this ID
+func getCorgiRandom(c *gin.Context) {
+	random_id := rand.Intn(len(corgis))
+	id := strconv.Itoa(random_id)
 
-// }
+	for _, a := range corgis {
+		if a.ID == id {
+			c.IndentedJSON(http.StatusOK, a)
+			return
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "corgi with this ID not found"})
+}
