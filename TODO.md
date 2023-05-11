@@ -16,5 +16,8 @@
  - Integrate with the REST API endpoints for dynamic content
  - Implement the user interface for CRUD operations
  - Add error handling for user inputs
- - Integrate with the REST API endpoints using AJAX calls (?)
+ - Integrate with the REST API endpoints using AJAX calls (if necessary)
  - Add authentication and authorization for user actions
+
+## Features
+ - Corgi Runner (like Google TreX)
