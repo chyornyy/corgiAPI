@@ -1,7 +1,7 @@
 package main
 
 import (
-	"corgiapi/model"
+	"corgiapi/models"
 	"math/rand"
 	"net/http"
 	"strconv"
@@ -14,14 +14,8 @@ type IndexPageData struct {
 	PageTitle string
 }
 
-type Comment struct {
-	User      string `json:"user"`
-	Text      string `json:"text"`
-	CreatedAt string `json:"created_at"`
-}
-
 // corgis slice to seed record cori data.
-var corgis = []model.Corgi{
+var corgis = []models.Corgi{
 	{ID: "0", Author: "admin", Name: "Alex", Breed: "Pembroke Welsh Corgi", Color: "tricolor", Age: 5, Description: "", Photo: "https://storage.yandexcloud.net/corgiapi-bucket/corgi_photos/corgi_alex_1.HEIC", Likes: 0, DateCreated: "", DateModified: ""},
 	{ID: "1", Author: "admin", Name: "Alex", Breed: "Pembroke Welsh Corgi", Color: "tricolor", Age: 5, Description: "", Photo: "https://storage.yandexcloud.net/corgiapi-bucket/corgi_photos/corgi_alex_2.HEIC", Likes: 0, DateCreated: "", DateModified: ""},
 	{ID: "2", Author: "admin", Name: "Alex", Breed: "Pembroke Welsh Corgi", Color: "tricolor", Age: 5, Description: "", Photo: "https://storage.yandexcloud.net/corgiapi-bucket/corgi_photos/corgi_alex_3.HEIC", Likes: 0, DateCreated: "", DateModified: ""},
@@ -70,7 +64,7 @@ func getCorgis(c *gin.Context) {
 
 // postCorgis adds an corgi from JSON received in the request body.
 func postCorgis(c *gin.Context) {
-	var newCorgi model.Corgi
+	var newCorgi models.Corgi
 
 	// Call BindJSON to bind the received JSON to
 	// newAlbum.
